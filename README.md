@@ -169,8 +169,8 @@ This structure highlights the main components of the Model_deploy project:
 
 | File                                                                                    | Summary                                                                                                                                                                                                                                                 |
 | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [main.py](https://github.com/223MapAction/Model_deploy/blob/master/app/main.py)         | Initializes FastAPI app with CORS middleware.-Connects to the database on app startup.-Gracefully disconnects from the database on app shutdown.-Includes main_routers APIs under /api1 prefix.                                                         |
-| [database.py](https://github.com/223MapAction/Model_deploy/blob/master/app/database.py) | Establishes a connection to a PostgreSQL database within the Model_deploy repo's app module. Leveraging the databases library, it initializes a database instance with a predefined URL for subsequent data operations across the ML deployment system. |
+| [main.py](https://github.com/223MapAction/map-action-ai-service/blob/master/app/main.py)         | Initializes FastAPI app with CORS middleware.-Connects to the database on app startup.-Gracefully disconnects from the database on app shutdown.-Includes main_routers APIs under /api1 prefix.                                                         |
+| [database.py](https://github.com/223MapAction/map-action-ai-service/blob/master/app/database.py) | Establishes a connection to a PostgreSQL database within the Model_deploy repo's app module. Leveraging the databases library, it initializes a database instance with a predefined URL for subsequent data operations across the ML deployment system. |
 
 </details>
 
@@ -178,7 +178,7 @@ This structure highlights the main components of the Model_deploy project:
 
 | File                                                                                       | Summary                         |
 | ------------------------------------------------------------------------------------------ | ------------------------------- |
-| [llm.py](https://github.com/223MapAction/Model_deploy/blob/master/app/services/llm/llm.py) | Contains core LLM functionality |
+| [llm.py](https://github.com/223MapAction/map-action-ai-service/blob/master/app/services/llm/llm.py) | Contains core LLM functionality |
 
 </details>
 
@@ -186,9 +186,9 @@ This structure highlights the main components of the Model_deploy project:
 
 | File                                                                                                             | Summary                                                                                                             |
 | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| [cnn_preprocess.py](https://github.com/223MapAction/Model_deploy/blob/master/app/services/cnn/cnn_preprocess.py) | Implements image preprocessing for the CNN model, including resizing and normalization.                             |
-| [cnn.py](https://github.com/223MapAction/Model_deploy/blob/master/app/services/cnn/cnn.py)                       | Contains the main CNN prediction logic, using a pre-trained VGG16 model to classify environmental issues in images. |
-| [cnn_model.py](https://github.com/223MapAction/Model_deploy/blob/master/app/services/cnn/cnn_model.py)           | Defines the CNN model architecture, adapting VGG16 for the specific classification task.                            |
+| [cnn_preprocess.py](https://github.com/223MapAction/map-action-ai-service/blob/master/app/services/cnn/cnn_preprocess.py) | Implements image preprocessing for the CNN model, including resizing and normalization.                             |
+| [cnn.py](https://github.com/223MapAction/map-action-ai-service/blob/master/app/services/cnn/cnn.py)                       | Contains the main CNN prediction logic, using a pre-trained VGG16 model to classify environmental issues in images. |
+| [cnn_model.py](https://github.com/223MapAction/map-action-ai-service/blob/master/app/services/cnn/cnn_model.py)           | Defines the CNN model architecture, adapting VGG16 for the specific classification task.                            |
 
 </details>
 
@@ -196,7 +196,7 @@ This structure highlights the main components of the Model_deploy project:
 
 | File                                                                                               | Summary                                                                                                                                                                                                                                                                |
 | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [main_router.py](https://github.com/223MapAction/Model_deploy/blob/master/app/apis/main_router.py) | Handles image prediction, contextualization, and data insertion. Utilizes FastAPI, requests, and Celery for async tasks. Fetches images, processes predictions, and stores results in the Mapapi_prediction table. Resilient to exceptions with proper error handling. |
+| [main_router.py](https://github.com/223MapAction/map-action-ai-service/blob/master/app/apis/main_router.py) | Handles image prediction, contextualization, and data insertion. Utilizes FastAPI, requests, and Celery for async tasks. Fetches images, processes predictions, and stores results in the Mapapi_prediction table. Resilient to exceptions with proper error handling. |
 
 </details>
 
@@ -204,7 +204,7 @@ This structure highlights the main components of the Model_deploy project:
 
 | File                                                                                                 | Summary                                                                               |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| [image_model.py](https://github.com/223MapAction/Model_deploy/blob/master/app/models/image_model.py) | Defines ImageModel with image_name, sensitive_structures, and incident_id attributes. |
+| [image_model.py](https://github.com/223MapAction/map-action-ai-service/blob/master/app/models/image_model.py) | Defines ImageModel with image_name, sensitive_structures, and incident_id attributes. |
 
 </details>
 
@@ -212,7 +212,7 @@ This structure highlights the main components of the Model_deploy project:
 
 | File                                                                                                          | Summary                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [test_main_router.py](https://github.com/223MapAction/Model_deploy/blob/master/test/apis/test_main_router.py) | Verifies FastAPI endpoint functionality by simulating HTTP requests to ensure the Index route returns a 200 status code and correct JSON response. |
+| [test_main_router.py](https://github.com/223MapAction/map-action-ai-service/blob/master/test/apis/test_main_router.py) | Verifies FastAPI endpoint functionality by simulating HTTP requests to ensure the Index route returns a 200 status code and correct JSON response. |
 
 </details>
 
@@ -220,7 +220,7 @@ This structure highlights the main components of the Model_deploy project:
 
 | File                                                                                              | Summary                                                                                                                                                                                                                                                  |
 | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ci_cd.yml](https://github.com/223MapAction/Model_deploy/blob/master/.github/workflows/ci_cd.yml) | Handles continuous integration and deployment via GitHub Actions. Runs test suites to validate code quality, builds and pushes Docker images, and deploys the ML model API on master branch pushes. Includes secret handling for Docker Hub credentials. |
+| [ci_cd.yml](https://github.com/223MapAction/map-action-ai-service/blob/master/.github/workflows/ci_cd.yml) | Handles continuous integration and deployment via GitHub Actions. Runs test suites to validate code quality, builds and pushes Docker images, and deploys the ML model API on master branch pushes. Includes secret handling for Docker Hub credentials. |
 
 </details>
 
@@ -278,9 +278,9 @@ This structure highlights the main components of the Model_deploy project:
 
 Contributions are welcome! Here are several ways you can contribute:
 
--   **[Report Issues](https://github.com/223MapAction/Model_deploy/issues)**: Submit bugs found or log feature requests for the `Model_deploy` project.
--   **[Submit Pull Requests](https://github.com/223MapAction/Model_deploy/pulls)**: Review open PRs, and submit your own PRs.
--   **[Join the Discussions](https://github.com/223MapAction/Model_deploy/discussions)**: Share your insights, provide feedback, or ask questions.
+-   **[Report Issues](https://github.com/223MapAction/map-action-ai-service/issues)**: Submit bugs found or log feature requests for the `Model_deploy` project.
+-   **[Submit Pull Requests](https://github.com/223MapAction/map-action-ai-service/pulls)**: Review open PRs, and submit your own PRs.
+-   **[Join the Discussions](https://github.com/223MapAction/map-action-ai-service/discussions)**: Share your insights, provide feedback, or ask questions.
 
 See our [Contribution Guidelines](https://github.com/223MapAction/.github/blob/main/CONTRIBUTING.md) for details on how to contribute.
 
@@ -288,7 +288,7 @@ See our [Contribution Guidelines](https://github.com/223MapAction/.github/blob/m
 <summary>Contributor Graph</summary>
 <br>
 <p align="center">
-   <a href="https://github.com{/223MapAction/Model_deploy/}graphs/contributors">
+   <a href="https://github.com{/223MapAction/map-action-ai-service/}graphs/contributors">
       <img src="https://contrib.rocks/image?repo=223MapAction/Model_deploy">
    </a>
 </p>
@@ -324,7 +324,7 @@ This project aims to comply with the Digital Public Goods Standard. Below is a s
 2. Use of Approved Open License: Compliant (AGPL-3.0 license)
 3. Clear Ownership: The project is owned and maintained by Map Action, ensuring accountability and continuous development.
 4. Platform Independence: The project is designed to be platform-independent, running on various operating systems and environments with Docker support.
-5. Documentation: Largely compliant (see README and [developer documentation](https://223mapaction.github.io/Model_deploy/))
+5. Documentation: Largely compliant (see README and [developer documentation](https://223mapaction.github.io/map-action-ai-service/))
 6. Mechanism for Extracting Data: The project includes APIs and data processing pipelines to extract and analyze environmental data efficiently.
 7. Adherence to Privacy and Applicable Laws: The project follows best practices for data privacy and complies with relevant legal requirements to protect user data.
 8. Adherence to Standards & Best Practices: The project adheres to industry standards and best practices in software development, ensuring high-quality and reliable solutions.
