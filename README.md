@@ -4,7 +4,7 @@
   <img src="https://dashboard.map-action.com/static/media/logo.ff03b7a9.png" width="100" alt="project-logo">
 </p>
 <p align="center">
-    <h1 align="center">Model_deploy</h1>
+    <h1 align="center">map-action-ai-service</h1>
 </p>
 <p align="center">
     <em>FastAPI wrapper for Map Action Model deployment.</em>
@@ -95,7 +95,7 @@ The system uses FastAPI endpoints to make predictions using computer vision mode
 ## Repository Structure
 
 ```sh
-└── Model_deploy/
+└── map-action-ai-service/
     ├── .github
     │   └── workflows
     ├── app
